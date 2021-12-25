@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>E-40 Ipsum Generator</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src ="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
+        <script type="text/javascript" src="scripts/paddedscript.js"></script>
+    </head>
+    <body>
+        <!--Header-->
+        <header>
+            <h1>E-40 Ipsum</h1>
+        </header>
+
+        <img src="css/img/e40_left.png" alt="e40" id="e40left">
+
+        <!--Main Container-->
+        <div id="main">
+                <article>
+                    <!--Settings-->
+                    <div class="outlined">Settings</div>
+
+                    <!--Check boxes-->
+                    <div class="flexdown" id="checkboxDiv">
+                        <div>
+                            <input id="fortycheckbox" type="checkbox">
+                            <label for="fortycheckbox">Start with "FORTY"</label>
+                        </div>
+                        <br>
+                        <div>
+                            <input id="realcheckbox" type="checkbox">
+                            <label for="realcheckbox">REAL <span style="color:grey; font-size: 16px;">(Include vulgar Lyrics)</span></label>
+                        </div>
+                    </div>
+
+                    <!--Paragraph count settings-->
+                    <div class="flexdown">
+                        <label for="paragraphs"><span style="font-size: 30px; font-weight: bold;">Paragraphs:</span></label>
+                        <br>
+                        <input type="number" min="1" id="paragraphs" value="1" max="100">
+                    </div>
+
+                    <!--Generate button-->
+                    <div>
+                        <button class="btn btn-lg btn-outline-success">GENERATE BARS</button>
+                    </div>
+                </article>
+
+                <!--Aside-->
+                <aside>
+                    <div id="BARS">BARS</div>
+                    <div id="ipsumtext"><strong>Ipsum Dolor text generator in the style of rapper E40. <br><br> Enter desired settings and hit "generate bars" to run!</strong></div>
+                </aside>
+        </div>
+        <img src="css/img/e40glasses.png" alt="e40 glasses" id="e40glasses">
+
+        <footer>
+            <div>
+                CST336 Internet Programming. 2021&copy; Deelane
+                <br><br>
+                <strong>Disclaimer:</strong> The information in this webpage is fictitious.
+                <br>
+                It is used for academic purposes only.
+            </div>
+            <figure>
+                <img src="css/img/csumb_round_logo_small.png" alt="CSUMB logo"/>
+            </figure>
+        </footer>
+
+    </body>
+</html>
+

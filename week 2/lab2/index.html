@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>US Geography Quiz</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src ="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script> 
+    <script type="text/javascript" src="js/script.js"></script>
+  </head>
+  <body class="text-center">
+    <header>
+      <h1 class="p-5 bg-info">US Geography Quiz</h1>
+    </header>
+
+    <article>
+      <!--Question 1-->
+      <div>
+        <h3><span id="markImg1"></span>What is the capital of California?</h3>
+        <input type="text" id="q1">
+      </div>
+        <br>
+      <div id="q1Feedback"></div>
+      
+      <!--Question 2-->
+      <div>
+      <h3><span id="markImg2"></span>What is the longest river?</h3>
+      <select id="q2">
+        <option value="">Select One</option>
+        <option value="ms">Mississippi</option>
+        <option value="mo">Missouri</option>
+        <option value="co">Colorado</option>
+        <option value="de">Delaware</option>
+      </select>
+      </div>
+      <br>
+      <div id="q2Feedback"></div>
+
+      <!--Question 3-->
+      <div>
+        <h3><span id="markImg3"></span>Which presidents are carved into mount Rushmore?</h3>
+        <div><input type="checkbox" id="Jackson"><label for="Jackson">Andrew Jackson</label></div>
+        <div><input type="checkbox" id="Franklin"><label for="Franklin">Benjamin Franklin</label></div>
+        <div><input type="checkbox" id="Jefferson"><label for="Jefferson">Thomas Jefferson</label></div>
+        <div><input type="checkbox" id="Roosevelt"><label for="Roosevelt">Theodore Roosevelt</label></div>
+      </div>
+      <br>
+      <div id="q3Feedback"></div>
+
+      <!--Question 4-->
+      <div>
+        <h3><span id="markImg4"></span>What is the smallest state?</h3>
+        <div id="q4Choices"></div>
+      </div>
+      <br>
+      <div id="q4Feedback"></div>
+    
+      <!--Question 5-->
+      <div>
+        <h3><span id="markImg5"></span>Which state are the Rocky Mountains in?</h3>
+        <input type="text" id="q5">
+      </div>
+        <br>
+        <div id="q5Feedback"></div>
+
+      <!--Question 6-->
+      <div>
+        <h3><span id="markImg6"></span>What is the largest state?</h3>
+        <select id="q6">
+          <option value="">Select One</option>
+          <option value="tx">Texas</option>
+          <option value="ak">Alaska</option>
+          <option value="mt">Montana</option>
+          <option value="ca">California</option>
+        </select>
+      </div>
+      <br>
+      <div id="q6Feedback"></div>
+
+      <!--Question 7-->
+      <div>
+        <h3><span id="markImg7"></span>Which states were part of the original 13 colonies?</h3>
+        <div><input type="checkbox" id="NewYork"><label for="NewYork">New York</label></div>
+        <div><input type="checkbox" id="Michigan"><label for="Michigan">Michigan</label></div>
+        <div><input type="checkbox" id="Florida"><label for="Florida">Florida</label></div>
+        <div><input type="checkbox" id="Pennsylvania"><label for="Pennsylvania">Pennsylvania</label></div>
+      </div>
+      <br>
+      <div id="q7Feedback"></div>
+
+      <!--Question 8-->
+      <div>
+        <h3><span id="markImg8"></span>Which state has the largest population?</h3>
+        <div id="q8Choices"></div>
+      </div>
+      <br>
+      <div id="q8Feedback"></div>
+
+      <!--Question 9-->
+      <div>
+        <h3><span id="markImg9"></span>Which state has the most cows?</h3>
+        <input type="text" id="q9">
+      </div>
+      <br>
+      <div id="q9Feedback"></div>
+
+      <!--Question 10-->
+      <div>
+        <h3><span id="markImg10"></span>Which state has the most trees per surface area?</h3>
+        <select id="q10">
+          <option value="">Select One</option>
+          <option value="ca">California</option>
+          <option value="or">Oregon</option>
+          <option value="nh">New Hampshire</option>
+          <option value="me">Maine</option>
+        </select>
+      </div>
+      <br>
+      <div id="q10Feedback"></div>
+    </article>
+    <h3 id="validationFdbk" class="bg-danger text-white"></h3>
+    <button class="btn btn-lg btn-primary">Submit Quiz</button>
+
+    <br>
+    <h2 id="totalScore" class="text-info"></h2>
+    <h3 id="totalAttempts"></h3>
+  </body>
+</html>

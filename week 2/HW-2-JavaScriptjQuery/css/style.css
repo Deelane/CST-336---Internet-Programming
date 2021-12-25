@@ -1,0 +1,151 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css");
+
+html
+{
+    height: 100%;
+    line-height: 1.15; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+body
+{
+    height: 100%;
+    background-image: url("img/practicemakespaper.jpg");
+    background-size: auto 100%;
+}
+header
+{
+    margin: 1% 25%;
+    height: 30%;
+    background-image: url("img/crowd.png");
+    border: 2px ridge black;
+}
+h1
+{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-weight: bold;
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: 110px;
+    height: 100%;
+    margin-right: 5%;
+    color: black;
+    -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 5px;
+    -webkit-text-stroke-color: black;
+}
+#main
+{
+    display: flex;
+    flex-direction: row;
+    margin: 0% 25%;
+    height: 65%;
+}
+#e40left
+{
+    position: absolute;
+    left: 50px;
+    top: 40%;
+    z-index: -1;
+}
+#e40glasses
+{
+    position: absolute;
+    right: 0px;
+    top: 40%;
+    z-index: -1;
+    display: none;
+}
+article
+{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 40%;
+    border: 2px ridge black;
+    margin-right: 1%;
+}
+article>div
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5%;
+    height: 20%;
+}
+.flexdown
+{
+    display: flex;
+    flex-direction: column;
+}
+#paragraphs
+{
+    background: rgb(237,237,237);
+    background: linear-gradient(90deg, rgba(237,237,237,1) 0%, rgba(244,244,244,1) 50%, rgba(237,237,237,1) 100%);
+    font-size: 100px;
+    height: 90%;
+    max-height: 90%;
+    max-width: 90%;
+    text-align: center;
+}
+.outlined
+{
+    font-size: 50px;
+    font-weight: bold;
+    border: solid 2px black;
+}
+#checkboxDiv
+{
+    align-items: normal;
+    padding-left: 9%;
+}
+aside
+{
+    position: relative;
+    height: 100%;
+    width: 60%;
+    background-color: white;
+    border: 2px ridge black;
+}
+aside>div
+{
+    height: 10%;
+}
+#BARS
+{
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: 3%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#ipsumtext
+{
+    background: rgb(237,237,237);
+    background: linear-gradient(90deg, rgba(237,237,237,1) 0%, rgba(244,244,244,1) 50%, rgba(237,237,237,1) 100%);  border: 2px ridge black;
+    overflow: auto;
+    font-size: 20px;
+    height: 80%;
+    margin: 2% 5% 3%;
+    padding: 8px;
+}
+footer
+{
+    background-color: white;
+    display: flex;
+    font-size: .8em;
+    justify-content: center;
+    align-items: center;
+    font-style: italic;
+    color:grey;
+    margin: 1% 25%;
+    padding: 5px;
+    border: solid 1px black;
+}
+footer>figure
+{
+    margin: 0 50px auto;
+}
