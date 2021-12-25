@@ -1,3 +1,6 @@
+READ REPORT.PDF FOR FULL DETAILS
+
+
 Trip Planner is a web application that provides the user with the option to enter a
 destination or select from recently entered user destinations, select an activity type, and
 choose from nearby activities based on the type that they may wish to visit. We have
