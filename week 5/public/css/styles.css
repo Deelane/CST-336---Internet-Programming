@@ -1,0 +1,64 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css");
+
+body 
+{
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+main {
+    background-color: rgba(0,0,0,0.75);
+    width: 50%;
+    margin: 100px auto;
+    border-radius: 25px;
+    padding: 10px;
+    font-size: 2.5em;
+}
+
+h1 {
+    color: silver;
+}
+
+input, button {
+    font-size: 1.3em
+}
+.image {
+   border-radius: 20px;       
+}
+
+#resultsContainer, #favorites {
+  background-color: rgba(250,250,250,0.50);
+  display: inline-block;
+  padding: 15px;
+  border-radius: 25px;
+  margin:0 auto;
+}
+
+#favLink, .link 
+{
+  font-size: 1.3em;
+}
+
+#favContainer {
+  background-color: rgba(0,0,0,0.75);
+  width: 75%;
+  margin: 0 auto;
+  border-radius: 25px;
+}
+
+.keywordLink {
+  background-color: rgba(250,250,250,0.75);
+  color: #CE4108;
+  font-size: 1.5em;
+  margin:5px;
+  padding-left: 5px;
+  padding-right: 5px
+}
+form
+{
+  margin: 5%;
+}
+h1
+{
+  font-size: 2.5em;
+}

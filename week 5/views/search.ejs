@@ -1,0 +1,24 @@
+<%-include("partials/header.ejs")%>
+<body>
+  <main>
+    <h1>Cool Images </h1>
+    <form action="/search">
+      <input class="col-8" type="text" placeholder="Enter keyword" name="keyword"/>
+      <br>
+      <button class="btn-primary btn-lg col-8">Search</button>
+      <br>
+      <a class="badge badge-info" id="favLink" href="/getKeywords">See Favorites</a>
+
+    </form>
+    <hr>
+    <div id="resultsContainer">
+      <%for (let i = 0, length = imageUrlArray.length; i < length; i++){%>
+        <%-(i%3==0)?"<br>":""%>
+        <img class="image" src="<%=imageUrlArray[i]%>" width="200" height="200" alt="image of <%=imageKeyword%>">
+        <img class="favoriteIcon" src="/img/favorite.png" alt="favorite icon" width="20">
+      <%}%>
+    </div>
+  </main>
+</body>
+<%-include("partials/footer.ejs")%>
+<script src="/js/onload.js"></script>
