@@ -1,0 +1,55 @@
+@import url("https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css");
+footer
+{
+  display: flex;
+  font-size: .8em;
+  justify-content: center;
+  align-items: center;
+  font-style: italic;
+  color:grey;
+  margin-bottom: 5px;
+  padding: 5px;
+  border: solid 1px gray;
+}
+.centered
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav>a
+{
+  margin: 5px;
+}
+header
+{
+  flex-direction: column;
+}
+body
+{
+  margin: 0 30%;
+}
+h1 
+{
+    color: black;
+    -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+h2
+{
+  text-decoration: underline;
+}
+.selected
+{
+  background-color: lightgrey;
+  font-weight: bold;
+}
+main
+{
+  font-size: 1.2em;
+}
+footer>figure
+{
+  margin: 0 50px auto;
+}
