@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;500;700&display=swap');
+
+html, body
+{
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+body
+{
+	background-image: url("/img/paul-volkmer-qVotvbsuM_c-unsplash_smaller.png");
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+}
+td, th
+{
+	padding: 5px;
+	font-size: 1.5em;
+	border: solid 1px lightgrey;
+}
+th
+{
+	font-family: 'lato', sans-serif;
+	background: -webkit-linear-gradient(white, #38495a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+td
+{
+	color: white;
+}
+#main
+{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+#main>div
+{
+	margin-left: 5px;
+	margin-right: 5px;
+}
+a, h1
+{
+	font-family: 'lato', sans-serif;
+	background: -webkit-linear-gradient(white, #38495a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#disclaimer
+{
+	width: 30%;
+	font-size: 1.2em;
+	color: lightgrey;
+}
+#disclaimer>p>a
+{
+	font-size: 1em;
+}
+a
+{
+	font-size: 2.5em;
+	font-weight: bold;
+	border-bottom: solid 1px grey;
+}
+a:hover
+{
+	font-size: 3em;
+	transition: .5s;
+}
+h1
+{
+	font-size: 7em;
+}
+#planetInfo
+{
+	background-color: black;
+	padding: 10px;
+	border: solid 1px grey;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 5%;
+}
+footer
+{
+	margin-top: auto;
+    text-align: center;
+    font-size: 0.8em;
+    color: white;
+}
+#wrapper 
+{
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}

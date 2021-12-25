@@ -1,0 +1,30 @@
+<div id="wrapper">
+	<%- include("partials/header.ejs") %>
+		<h1>The Solar System</h1>
+		<div id="main">
+		<!--Dynamically Generate Navbar-->
+		<%
+			planets.forEach(planet =>
+			{
+				let planetObject = getPlanetObject(planet);
+				%>
+				<div>
+					<a href="/<%=planet.toLowerCase()%>"><%=planet%></a><br><br>
+					<img src="/img/<%=planet.toLowerCase()%>_small.gif" alt="<%=planet%> GIF">
+				</div>
+			<%});
+			
+			function getPlanetObject(planetName)
+			{
+				<!--filter body array by planet name-->
+				var result = bodies.filter(body => 
+				{
+					<!--return planet object-->
+					return body.englishName.toLowerCase() === planetName;
+				})
+				console.log(result);
+			}
+		%>
+		</div>
+	<%- include("partials/footer.ejs") %>
+</div>

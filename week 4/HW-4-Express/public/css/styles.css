@@ -1,0 +1,73 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+footer
+{
+  display: flex;
+  font-size: .8em;
+  justify-content: center;
+  align-items: center;
+  font-style: italic;
+  color:grey;
+  margin-bottom: 5px;
+  padding: 5px;
+  border: solid 1px gray;
+}
+.centered
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav>a
+{
+  margin: 5px;
+}
+header
+{
+  flex-direction: column;
+}
+body
+{
+  margin: 0 30%;
+}
+h1 
+{
+    color: black;
+    -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+h2
+{
+  text-decoration: underline;
+}
+.selected
+{
+  background-color: lightgrey;
+  font-weight: bold;
+}
+main
+{
+  font-size: 1.2em;
+}
+footer>figure
+{
+  margin: 0 50px auto;
+}
+#userDiv
+{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 5px;
+  font-size: 0.8em;
+}
+#userInfo
+{
+  padding: 10px;
+}
+#userPic
+{
+  min-width: 128px;
+}

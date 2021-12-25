@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title><%=planet%></title>
+	<link rel="stylesheet" href = "/css/styles.css"/>
+</head>
+<body>
+	<div id="wrapper">
+		<h1><%=planet%></h1>
+		<a href="/"> Home </a><br><br><br>
+		<div id="disclaimer">	
+			<p>	
+				The info on this page was dynamically generated using Le System Solaire API, an open source API with some missing data.
+				If you would like to learn more about <%=planet%>, please visit <a href="https://en.wikipedia.org/wiki/<%=planet%>_(planet)"><%=planet%>'s Wikipedia Page</a>.
+			</p>
+		</div>
+		<div id="planetInfo">
+			<img src="/img/<%=planet.toLowerCase()%>.gif" alt="image of <%=planet%>">
+			<table>
+				<tr>
+					<th>English Name</th>
+					<td><%=body.englishName%></td>
+
+				</tr>
+				<tr>
+					<th>French Name</th>
+					<td><%=body.frenchName%></td>
+				</tr>
+				<tr>
+					<th>Mass</th>
+					<%if (body.mass != null)
+					{%>
+						<td><%=body.mass.massValue%> x 10<sup><%=body.mass.massExponent%></sup> kg</td>
+					<%}%>
+				</tr>
+				<tr>
+					<th>Density</th>
+					<td><%=body.density%> g/cm<sup>3</sup</td>
+
+				</tr>
+				<tr>
+					<th>Gravity</th>
+					<td><%=body.gravity%> m/s<sup>2</sup></td>
+
+				</tr>
+				<tr>
+					<th>Average Radius</th>
+					<td><%=body.avgRadius%> km</td>
+
+				</tr>
+				<tr>
+					<th>Referential Orbit</th>
+					<td><a href="<%=body.refOrbit.rel%>"><%=body.refOrbit.planet%></a></td>
+
+				</tr>
+				<tr>
+					<th>Discovered By</th>
+					<td><%=body.discoveredBy%></td>
+
+				</tr>
+				<tr>
+					<th>Discovery Date</th>
+					<td><%=body.discoveryDate%></td>
+
+				</tr>
+				<tr>
+					<th>Axial Tilt</th>
+					<td><%=body.axialTilt%> degrees</td>
+				</tr>
+			</table>
+		</div>
