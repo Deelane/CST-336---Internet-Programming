@@ -1,0 +1,15 @@
+#main
+{
+  margin: 2% 20% !important;
+  padding: 5px;
+  border: solid 1px black;
+}
+h1
+{
+  text-align: center;
+  padding: 5px;
+}
+#countyDiv
+{
+  display: none;
+}

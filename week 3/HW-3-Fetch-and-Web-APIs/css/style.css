@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto&display=swap');
+
+body
+{
+    height: 100vh;
+}
+body>*
+{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2em;
+    color: #212227;
+}
+header
+{
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-bottom: solid 1px #637074;
+    background-color: #8693AB;
+}
+h1
+{
+    font-family: 'Lobster', cursive;
+    font-size: 4em !important;
+    color: black;
+    -webkit-text-fill-color: #212227;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: #E7F0FF;
+}
+h2
+{
+    font-family: 'Lobster', cursive;
+    font-size: 2em !important;
+}
+#main
+{
+    display: flex;
+    flex-direction: row;
+    height: 80%;
+    background-color: #BDD4E7;
+}
+article
+{
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    border-right: solid 3px #637074;
+}
+article>div
+{
+    padding: 20px;
+}
+aside
+{
+    padding-top: 20px;
+    width: 40%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    display: flex;
+    flex-direction: column;
+}
+#details
+{
+    display: flex;
+    flex-direction: column;
+    border-right: solid 3px #637074;
+    width: 50%;
+}
+
+#destinationDiv>*
+{
+    width: 100%;
+}
+#mapDiv
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#calculations
+{
+    width: 50%;
+}
+#emissions
+{
+    font-size: 1.5em;
+}
+footer
+{
+    height: 10%;
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-top: solid 1px #637074;
+    font-size: 0.8em;
+    color: #E7F0FF;
+    background-color: #212227;
+}
