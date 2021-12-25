@@ -1,0 +1,73 @@
+<!--Header-->
+<%- include("partials/header.ejs") %>
+
+<!-------Body Start------->
+<div id="wrapper">
+    <header>
+        <h1>Confirmation Form</h1>
+    </header>
+    <hr>
+    <div id="confirmContainer" class="d-flex flex-row w-100">
+        <div class="d-flex flex-column justify-content-start" id="detailsConfirm">
+            <article class="d-flex justify-content-center w-100">
+                <h3>Trip Details:</h3>
+                <div class="d-flex flex-column col-10 white m-1 p-2 bordered">
+                    Departure: <input class="form-control locationInput" type="text" id="departure" name="departure" value="<%=options.departure%>" readonly>
+                    Destination: <input class="form-control locationInput" type="text" id="destination" name="destination" value="<%=options.destination%>" readonly>
+                    <br>
+                    <img id="routeMap" src="<%=options.routeMap%>" alt="Image of route">
+                    <br>
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/<%=options.destination%>" class="btn btn-primary col-12">Go</a>
+                </div>
+            </article>
+        </div>
+        <div id="activitiesConfirm">
+            <aside class="d-flex justify-content-center flex-column w-100">
+                <h3><%if (options.hasActivities) {%>Selected Activities:<%}else{%>Popular Activities:<%}%></h3>
+                <div id="activities" name="activities" class="bordered d-flex flex-column col-10 white m-1 p-2">
+                    <%options.activities.forEach(result => {%>
+                    <div id="activity" class="bordered flexRow contentCentered m-1">
+                        <div id="activityInfo" class="flexColumn">
+                            <a href="<%=result.url%>" alt="<%=result.name%> on yelp"><p><%=result.name%></p></a>
+                            <p><%=result.location%></p>
+                            <p><%=result.phone%></p>
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/<%=result.location%>" class="btn btn-primary col-7" type="button">Go</a>
+                        </div>
+                        <a class="imgLink" href="<%=result.image_url%>"><img class="imgSmall" src="<%=result.image_url%>"></a>
+                    </div>
+                    <%});%>
+                </div>
+            </aside>
+        </div>
+    </div>
+    <hr>
+    <!--Footer-->
+    <%- include("partials/footer.ejs") %>
+</div>
+<!-------Body End------->
+
+<!--Local Scripts-->
+<script>
+    $(function()
+    {
+        let userCoordinates = <%-JSON.stringify(options.userCoordinates)%>;
+        let destinationCoordinates = <%-JSON.stringify(options.destinationCoordinates)%>;
+        let key = "AuaDuAL_YXvZjmtm-Ben01GV9RLwMJdIQu5qgzf5jt5doJ-CdTPVT99Ct4bp79ZY";
+
+        //Display route map
+        //Couldn't do this server side for some reason
+        let url = "https://dev.virtualearth.net/REST/v1/Imagery/Map/AerialWithLabels/Routes/Driving?waypoint.1=" + userCoordinates[0] + "," + userCoordinates[1] + "&waypoint.2=" + destinationCoordinates[0] + "," + destinationCoordinates[1] + "&mapSize=700,700&avoid=tolls&mapLayer=TrafficFlow&key=" + key;
+        fetch(url)
+            .then(response => response.blob())
+            .then(imageBlob =>
+            {
+                imageUrl = URL.createObjectURL(imageBlob);
+                $("#routeMap").attr("src", imageUrl);
+            })
+            .catch(e =>
+            {
+                console.log(e);
+            });
+
+    })
+</script>

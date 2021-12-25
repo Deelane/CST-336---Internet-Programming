@@ -1,0 +1,107 @@
+<!--Header-->
+<%- include("partials/header.ejs") %>
+
+<!-------Body Start------->
+<div id="wrapper">
+    <div class="contentCentered col-12">
+        <header>
+            <h1>Finalize Trip</h1>
+        </header>
+        <form class="bordered" action="/confirmTrip" method="POST" class="DestForm">
+            <div>
+                <input type="text" id="userCoordinates" name="userCoordinates" value="<%=options.userCoordinates%>" hidden>
+                Departure: <input class="form-control locationInput" type="text" id="departure" name="departure" value="<%=options.departure%>" readonly>
+                Destination: <input class="form-control locationInput" type="text" id="destination" name="destination" value="<%=options.destination%>" readonly>
+                Activities: <input class="form-control locationInput" type="text" id="preferredActivities" name="preferredActivities" value="<%=options.preferredActivities%>"readonly>
+                <br>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="emailConfirmCheckbox">
+                    <label class="form-check-label" for="emailConfirmCheckbox">Email Trip Details</label>
+                </div>
+                <div id="email" style="display: none">
+                    Email: <input class="form-control" type="email" name="email">
+                </div>
+            </div>
+            <br>
+            Activities:
+            <div id="activities" name="activities" class="bordered">
+                <%
+                    let i = 0;
+                    options.yelpResults.businesses.forEach(result =>
+                {%>
+                    <div id="activity" class="bordered flexRow contentCentered m-1">
+                        <div id="activityInfo" class="flexColumn">
+                            <a href="<%=result.url%>" alt="<%=result.name%> on yelp"><p><%=result.name%></p></a>
+                            <p><%=result.location.display_address%></p>
+                            <p><%=result.display_phone%></p>
+
+                            <!--Do not move this input-->
+                            <input name="checkbox<%=i%>" type="checkbox" hidden>
+
+                            <div>
+                                <button id="addButton" class="btn btn-success" type="button">Add</button>
+                                <button id="removeButton" class="btn btn-danger" type="button">Remove</button>
+                            </div>
+                        </div>
+                        <a class="imgLink" href="<%=result.image_url%>"><img src="<%=result.image_url%>"></a>
+
+                        <!--Hidden fields-->
+                        <input name="activity<%=i%>" value="<%=result.id%>" hidden>
+                        <input name="activityName<%=i%>" value="<%=result.name%>" hidden>
+                        <input name="activityUrl<%=i%>" value="<%=result.url%>" hidden>
+                        <input name="activityLocation<%=i%>" value="<%=result.location.display_address%>" hidden>
+                        <input name="activityPhone<%=i%>" value="<%=result.display_phone%>" hidden>
+                        <input name="activityImg<%=i%>" value="<%=result.image_url%>" hidden>
+                    </div>
+                <%
+                    i++});%>
+            </div>
+            <button id="submit" class="btn btn-primary col-12" type="submit">Confirm Trip</button>
+        </form>
+    </div>
+</div>
+<!-------Body End------->
+
+<!--Footer-->
+<%- include("partials/footer.ejs") %>
+
+<!--Local Scripts-->
+<script>
+    $(function()
+    {
+        /**EMAIL**/
+        $("#emailConfirmCheckbox").on("change", function()
+        {
+           let checkbox = $(this);
+           if (checkbox.prop('checked'))
+           {
+               $("#email").show();
+           }
+           else
+           {
+               $("#email").hide();
+           }
+        });
+
+        /**ACTIVITY SELECTION**/
+        //Class to be used for tracking selected activities
+        $("#activityInfo>div>button").on("click", function()
+        {
+            let selectedButton = $(this);
+            let activityDiv = selectedButton.parent().parent().parent();
+            let checkbox = selectedButton.parent().prev();
+
+            //Add border
+            if (selectedButton.attr("id") === "addButton")
+            {
+                activityDiv.addClass("added");
+                checkbox.prop("checked", true);
+            }
+            else
+            {
+                activityDiv.removeClass("added");
+                checkbox.prop("checked", false);
+            }
+        });
+    });
+</script>

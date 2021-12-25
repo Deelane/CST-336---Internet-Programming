@@ -1,0 +1,210 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css");
+
+#images
+{
+    width: 800px;
+    height: 600px;
+    animation: transition 50s;
+    background-image: url("../img/boat.gif");
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+}
+
+@keyframes transition
+{
+    0%
+    {
+        background-image: url("../img/boat.gif");
+    }
+    16.66%
+    {
+        background-image: url("../img/desert.gif");
+    }
+    33.33%
+    {
+        background-image: url("../img/mountain.gif");
+    }
+    50%
+    {
+        background-image: url("../img/plane.gif");
+    }
+    66.66%
+    {
+        background-image: url("../img/seasons.gif");
+    }
+    83.33%
+    {
+        background-image: url("../img/train.gif");
+    }
+}
+#wrapper
+{
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+header
+{
+    margin-bottom: auto;
+    padding-top: 4%;
+    font-size: 4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main
+{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: lightsteelblue;
+}
+article
+{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+aside
+{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+footer
+{
+    margin-top: auto;
+    text-align: center;
+}
+#links
+{
+    font-size: 4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+hr
+{
+    width: 100%;
+}
+form
+{
+    background-color: lightsteelblue;
+    padding: 10px;
+    font-size: 1.5em;
+    width: 60%;
+}
+.contentCentered
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.bordered
+{
+    border: solid 1px black;
+}
+#activities
+{
+    padding: 10px;
+    background-color: white;
+}
+#activities>div
+{
+    padding: 10px 10px 10px 20px;
+}
+.imgLink
+{
+    position: relative;
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+}
+.imgLink img
+{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 100%;
+    width: auto;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+.flexColumn
+{
+    display: flex;
+    flex-direction: column;
+}
+.flexRow
+{
+    display: flex;
+    flex-direction: row;
+}
+#activityInfo
+{
+    width: 80%;
+    font-weight: bold;
+    font-size: 0.8em;
+}
+.added
+{
+    border: solid 3px green;
+}
+#errorDiv
+{
+    height: 100vh;
+}
+#detailsConfirm, #activitiesConfirm
+{
+    width: 50%;
+    background-color: lightsteelblue;
+    border: solid 1px black;
+    margin: 2px;
+}
+.white
+{
+    background-color: white;
+}
+#activitiesConfirm
+{
+    font-size: 1.5em;
+}
+#activity
+{
+    background-color: #f5f5f5;
+}
+h1
+{
+    font-size: 1.5em;
+}
+.btn-secondary
+{
+    background-color: #cdcdcd;
+    color: #0d6efd;
+    border-color: #cdcdcd;
+}
+.btn-secondary:hover
+{
+    background-color: #cdcdcd;
+    color: #0d6efd;
+    border-color: #cdcdcd;
+}
+.table
+{
+    background-color: lightsteelblue;
+}
+.lead
+{
+    font-size: 2em;
+}

@@ -1,0 +1,102 @@
+<!--Header-->
+<%- include("partials/header.ejs") %>
+
+<!-------Body Start------->
+<div id="wrapper">
+    <div class="contentCentered col-12">
+        <header class="flex-column">
+            <h1>Destination Confirmation</h1>
+            <button style="font-size: 0.8em;" id="randomButton" class="btn btn-secondary col-5 mt-5" type="submit">Randomize</button>
+            <p>OR</p>
+            <b>Enter Details:</b>
+        </header>
+        <form class="bordered" action="/finalizeTrip" onsubmit="return validateForm();" method="POST" class="DestForm">
+            <input type="text" id="userCoordinates" name="userCoordinates" hidden>
+            Departure: <input class="form-control locationInput" type="text" id="departure" name="departure">
+            Destination: <input class="form-control locationInput" type="text" id="destination" name="destination">
+            Preferred Activities:
+            <select class="form-control" id="preferredActivities" name="preferredActivities">
+                <option value="" disabled selected>Select One</option>
+                <option value="active, All" name="active">Active Life</option>
+                <option value="arts, All" name="arts">Arts & Entertainment</option>
+                <option value="beautysvc, All" name="beauty">Beauty & Spas</option>
+                <option value="food, All" name="food">Food</option>
+                <option value="hotelstravel, All" name="bus">Hotels & Travel</option>
+                <option value="nightlife, All" name="train">Nightlife</option>
+            </select>
+            <button id="submit" class="btn btn-primary col-12" type="submit">Confirm Destination</button>
+        </form>
+    </div>
+</div>
+<!-------Body End------->
+
+<!--Footer-->
+<%- include("partials/footer.ejs") %>
+
+<!--Local Scripts-->
+<script src="/js/setUserLocation.js"></script>
+<script>
+
+    //ignore the IDE throwing an error here
+    var randomDestinations = <%-JSON.stringify(options.randomDestinationArray)%>;
+
+    $(function()
+    {
+        cacheUserLocation();
+
+        let elementToUpdate = $("#userCoordinates");
+        setUserLocation(elementToUpdate, "coordinates");
+
+        elementToUpdate = $("#departure");
+        setUserLocation(elementToUpdate, "humanReadable");
+
+        $("#randomButton").on("click", function()
+        {
+            let length = randomDestinations.length;
+            let randomIndex = Math.floor(Math.random() * length);
+            let destinationString = randomDestinations[randomIndex];
+            $("#destination").val(destinationString);
+
+            //Preferred Activities
+            length = $("#preferredActivities option").length - 1;
+            //range is 1 - 7
+            randomIndex = Math.floor(Math.random() * length) + 1;
+            $("#preferredActivities").prop('selectedIndex', randomIndex);
+
+        })
+    });
+
+    function validateForm()
+    {
+        //ERROR CHECKING
+        if ($("#departure").val() === "")
+        {
+           alert("Must enter departure location!");
+           return false;
+        }
+
+        if ($("#destination").val() === "")
+        {
+            alert("Must enter a destination!");
+            return false;
+
+        }
+
+        if(!($("#preferredActivities").val()))
+        {
+            alert("Must select a preferred activity!");
+            return false;
+        }
+
+
+        //if coordinates are still not cached
+        if (!userLocationCached())
+        {
+            //cache coordinates from departure values
+            let location = $("#departure").val();
+            cacheUserLocation(location);
+        }
+        //Validation complete
+        return true;
+    }
+</script>

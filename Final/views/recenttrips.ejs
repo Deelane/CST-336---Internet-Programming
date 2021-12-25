@@ -1,0 +1,53 @@
+<!--Header-->
+<%- include("partials/header.ejs") %>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-------Body Start------->
+  <div class="container p-5 mb-5 text-center">
+    <header>
+      <h1>Recent Trips</h1>
+    </header>
+
+    <p class="lead">Browse through a selection of recent trips!</p>
+  </div>
+  <div class="container">
+    <form action="/finalizeTrip" method="POST" class="table">
+      <input type="text" id="userCoordinates" name="userCoordinates" value="" hidden>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Departure</th>
+            <th scope="col">Destination</th>
+            <th scope="col">Times Taken</th>
+            <th scope="col">Take Trip</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for (let i=0; i < recentTripsArray.length; i++) { %>
+            <tr>
+              <td id="departure_<%= recentTripsArray[i].trip_id%>"><%= recentTripsArray[i].departure_id %>
+              <td id="destination_<%= recentTripsArray[i].trip_id%>"><%= recentTripsArray[i].destination_id %>
+              <td><%= recentTripsArray[i].times_taken %></td>
+              <td><button class="btn btn-primary" id="<%= recentTripsArray[i].trip_id%>" type="submit">Take Trip</button></td>
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+      <input class="form-control locationInput" type="text" id="departure" name="departure" value="" hidden>
+      <input class="form-control locationInput" type="text" id="destination" name="destination" value="" hidden>
+    </form>
+  </div>
+
+<script>
+  $("button").on("click", function() {
+    let id = $(this).attr("id");
+    $("#departure").val($("#departure_"+id).html());
+    $("#destination").val($("#destination_"+id).html());
+  });
+</script>
+<!-------Body End------->
+
+<!--Footer-->
+<%- include("partials/footer.ejs") %>
+
+<!--Local Scripts-->

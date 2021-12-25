@@ -1,0 +1,31 @@
+<!--Head (Not header)-->
+<%- include("partials/header.ejs") %>
+
+<!--Content Wrapper-->
+<div id="wrapper" class="d-flex justify-content-center">
+
+    <!--Header-->
+    <header class="contentCentered">
+        <div id="banner"><h1>Trip Planner</h1></div>
+    </header>
+
+    <!-------Body Start------->
+    <hr>
+    <!--Image animations-->
+        <main>
+            <article>
+                <div id="links">
+                    <a style="font-size: 1em;" class="btn btn-primary col-12" href="/destinations">Pick a destination</a>
+                    <br>
+                    <a style="font-size: 1em;" class="btn btn-secondary col-12" href="/recent">Recent trips</a>
+                </div>
+            </article>
+            <aside>
+                <div id="images"></div>
+            </aside>
+        </main>
+    <hr>
+    <!--Footer-->
+    <%- include("partials/footer.ejs") %>
+    <!-------Body End------->
+</div>
